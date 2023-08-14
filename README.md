@@ -1,6 +1,7 @@
-# Sample-Chataigne-module
-This is a sample Chataigne custom module. More info about Chataigne : https://benjamin.kuperberg.fr/chataigne
+# Hyperdeck module for Chataigne
 
-To create a custom module, fork this repository (if you want to use Git for version control or share it with the community) or download it then place the folder inside your `<Documents>/Chataigne/modules` folder.
+Implements a small subset of Hyperdeck commands (it is playback-oriented).
 
-You may want to check out the custom module documentation here : https://bkuperberg.gitbook.io/chataigne-docs/modules/custom-modules/making-your-own-module
+You can also send custom commands with the "Send custom message" command in the module.
+
+More info about Chataigne : https://benjamin.kuperberg.fr/chataigne
