@@ -11,10 +11,16 @@ function moduleParameterChanged(param) {
 
   if (param.isParameter()) {
     if (param.name === "overrideRemoteState") {
-      script.log("overrideRemoteState is " + param.get());
-      param.get()
+      if (local.parameters.output.isConnected.get() == 1){
+        param.get()
         ? sendToHyperdeck("remote: override: true")
         : sendToHyperdeck("remote: override: false");
+      }
+    } else if (param.name === "isConnected" && param.get() == 1) {
+      if (local.parameters.overrideRemoteState.get() == 1){
+        script.log("on envoie le remote override");
+        sendToHyperdeck("remote: override: true");
+      }
     }
   }
 }
@@ -35,11 +41,11 @@ function dataReceived(data) {
   //If mode is "Lines", you can expect data to be a single line String
   script.log("Data received : " + data);
 
-  if (data.charAt(0) !== "2") {
+  if (data.charAt(0) === "1") {
     script.logError(local.name + " : " + data);
-  }
+  }  
   if (data === "111 remote control disabled") {
-    if (local.parameters.overrideRemoteState === true) {
+    if (local.parameters.overrideRemoteState.get() === true) {
       sendToHyperdeck("remote: override: true");
     }
   }
