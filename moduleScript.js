@@ -66,6 +66,10 @@ function playLooped() {
   sendToHyperdeck("play: loop: true");
 }
 
+function playSingleFile() {
+  sendToHyperdeck("play: single clip: true");
+}
+
 function stop() {
   sendToHyperdeck("stop");
 }
@@ -102,6 +106,10 @@ function goToTimecode(tc_string) {
   } else {
     script.logError("Not a valid timecode");
   }
+}
+
+function goToClipID(id){
+  sendToHyperdeck("goto: clip id: " + id);
 }
 
 function sendCustomMessage(message) {

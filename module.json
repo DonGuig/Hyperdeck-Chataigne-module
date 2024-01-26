@@ -72,6 +72,11 @@
       "menu":"",  
       "callback":"playLooped"
     },
+    "Play (single file)":
+    {
+      "menu":"",  
+      "callback":"playSingleFile"
+    },
     "Stop":
     {
       "menu":"",  
@@ -87,6 +92,19 @@
         {
           "type":"String",
           "default":"00:00:00:00"
+        }
+      }
+    },
+    "Go To Clip ID":
+    {
+      "menu":"",  
+      "callback":"goToClipID",
+      "parameters":
+      {
+        "ID":
+        {
+          "type":"Integer",
+          "default":1
         }
       }
     },
